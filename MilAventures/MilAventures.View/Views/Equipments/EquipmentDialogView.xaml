@@ -1,0 +1,105 @@
+﻿<Window x:Class="MilAventures.View.Views.Equipments.EquipmentDialogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="{Binding DialogTitle}"
+        Height="540" Width="480"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="{StaticResource ColorGris}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Títol -->
+            <TextBlock Grid.Row="0" Text="{Binding DialogTitle}"
+                       Style="{StaticResource EstilMiniTitol}"
+                       Margin="0,0,0,24"/>
+
+            <!-- Títol equipament -->
+            <StackPanel Grid.Row="1" Margin="0,0,0,16">
+                <TextBlock Text="Títol *" Style="{StaticResource EstilLabel}" Margin="0,0,0,4"/>
+                <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource InputStyle}"/>
+            </StackPanel>
+
+            <!-- Descripció -->
+            <StackPanel Grid.Row="2" Margin="0,0,0,16">
+                <TextBlock Text="Descripció" Style="{StaticResource EstilLabel}" Margin="0,0,0,4"/>
+                <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource InputStyle}"
+                         Height="72" TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"/>
+            </StackPanel>
+
+            <!-- Preu per dia -->
+            <StackPanel Grid.Row="3" Margin="0,0,0,16">
+                <TextBlock Text="Preu per dia (€) *" Style="{StaticResource EstilLabel}" Margin="0,0,0,4"/>
+                <TextBox Text="{Binding PricePerDay, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource InputStyle}"/>
+            </StackPanel>
+
+            <!-- Unitats i Stock mínim -->
+            <Grid Grid.Row="4" Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Unitats *" Style="{StaticResource EstilLabel}" Margin="0,0,0,4"/>
+                    <TextBox Text="{Binding Units, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputStyle}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Stock mínim *" Style="{StaticResource EstilLabel}" Margin="0,0,0,4"/>
+                    <TextBox Text="{Binding MinStock, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource InputStyle}"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Categoria -->
+            <StackPanel Grid.Row="5" Margin="0,0,0,16">
+                <TextBlock Text="Categoria *" Style="{StaticResource EstilLabel}" Margin="0,0,0,4"/>
+                <ComboBox ItemsSource="{Binding Categories}"
+                          SelectedItem="{Binding SelectedCategory}"
+                          DisplayMemberPath="code"
+                          Style="{StaticResource DropdownStyle}"/>
+            </StackPanel>
+
+            <!-- Estat -->
+            <StackPanel Grid.Row="6" Margin="0,0,0,24">
+                <TextBlock Text="Estat *" Style="{StaticResource EstilLabel}" Margin="0,0,0,4"/>
+                <ComboBox ItemsSource="{Binding Statuses}"
+                          SelectedItem="{Binding SelectedStatus}"
+                          DisplayMemberPath="code"
+                          Style="{StaticResource DropdownStyle}"/>
+            </StackPanel>
+
+            <!-- Botons -->
+            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource BtnBorrarOutlined}"
+                        Command="{Binding CancelCommand}"
+                        Content="Cancel·lar"
+                        Margin="0,0,12,0"/>
+                <Button Style="{StaticResource BtnAcceptarFilled}"
+                        Command="{Binding SaveCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <iconPacks:PackIconMaterial Kind="Check" Width="16" Height="16" Margin="0,0,6,0"/>
+                        <TextBlock Text="Desar"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

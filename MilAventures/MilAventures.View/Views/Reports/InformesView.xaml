@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="MilAventures.View.Views.Reports.InformesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             Background="{StaticResource ColorBlanc}">
+    <Grid Margin="32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Informes"
+                   Style="{StaticResource EstilSubtitol}"
+                   Margin="0,0,0,32"/>
+
+        <WrapPanel Grid.Row="1" Orientation="Horizontal">
+
+            <!-- Informe 1 -->
+            <Border Width="200" Height="160" Margin="0,0,16,16"
+                    Background="{StaticResource ColorGris}"
+                    CornerRadius="8" Cursor="Hand">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{Binding InformeActivitatsCommand}"/>
+                </Border.InputBindings>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <iconPacks:PackIconMaterial Kind="FormatListBulleted"
+                                               Width="40" Height="40"
+                                               Foreground="{StaticResource ColorVerd}"
+                                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Llistat d'Activitats"
+                               Style="{StaticResource EstilLabel}"
+                               TextAlignment="Center" Margin="8,12,8,0"/>
+                    <TextBlock Text="Informe simple"
+                               Style="{StaticResource EstilText}"
+                               FontSize="12" TextAlignment="Center"
+                               Foreground="{StaticResource ColorGris}"
+                               Margin="8,4,8,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Informe 2 -->
+            <Border Width="200" Height="160" Margin="0,0,16,16"
+                    Background="{StaticResource ColorGris}"
+                    CornerRadius="8" Cursor="Hand">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{Binding InformeReservesEstatCommand}"/>
+                </Border.InputBindings>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <iconPacks:PackIconMaterial Kind="Group"
+                                               Width="40" Height="40"
+                                               Foreground="{StaticResource ColorVioleta}"
+                                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Reserves per Estat"
+                               Style="{StaticResource EstilLabel}"
+                               TextAlignment="Center" Margin="8,12,8,0"/>
+                    <TextBlock Text="Informe agrupat"
+                               Style="{StaticResource EstilText}"
+                               FontSize="12" TextAlignment="Center"
+                               Foreground="{StaticResource ColorGris}"
+                               Margin="8,4,8,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Informe 3 -->
+            <Border Width="200" Height="160" Margin="0,0,16,16"
+                    Background="{StaticResource ColorGris}"
+                    CornerRadius="8" Cursor="Hand">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{Binding InformeEstadistiquesCommand}"/>
+                </Border.InputBindings>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <iconPacks:PackIconMaterial Kind="ChartBar"
+                                               Width="40" Height="40"
+                                               Foreground="{StaticResource ColorTaronja}"
+                                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Estadístiques"
+                               Style="{StaticResource EstilLabel}"
+                               TextAlignment="Center" Margin="8,12,8,0"/>
+                    <TextBlock Text="Totals i mitjanes"
+                               Style="{StaticResource EstilText}"
+                               FontSize="12" TextAlignment="Center"
+                               Foreground="{StaticResource ColorGris}"
+                               Margin="8,4,8,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Informe 4 -->
+            <Border Width="200" Height="160" Margin="0,0,16,16"
+                    Background="{StaticResource ColorGris}"
+                    CornerRadius="8" Cursor="Hand">
+                <Border.InputBindings>
+                    <MouseBinding MouseAction="LeftClick"
+                                  Command="{Binding InformeReservesDatesCommand}"/>
+                </Border.InputBindings>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <iconPacks:PackIconMaterial Kind="CalendarRange"
+                                               Width="40" Height="40"
+                                               Foreground="{StaticResource ColorGrocFosc}"
+                                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Reserves per Dates"
+                               Style="{StaticResource EstilLabel}"
+                               TextAlignment="Center" Margin="8,12,8,0"/>
+                    <TextBlock Text="Filtrat per rang de dates"
+                               Style="{StaticResource EstilText}"
+                               FontSize="12" TextAlignment="Center"
+                               Foreground="{StaticResource ColorGris}"
+                               Margin="8,4,8,0"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+    </Grid>
+</UserControl>

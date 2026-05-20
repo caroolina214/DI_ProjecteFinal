@@ -1,0 +1,291 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Botó Cancel - Filled -->
+    <Style x:Key="BtnCancelFilled" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorGris}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorNegre}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ColorNegre}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!-- Botó Acceptar - Filled -->
+    <Style x:Key="BtnAcceptarFilled" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorVerd}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBlanc}" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ColorVerdFosc}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Acceptar - Outlined -->
+    <Style x:Key="BtnAcceptarOutlined" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorBlanc}" />
+        <Setter Property="Foreground"  Value="{DynamicResource ColorVerd}" />
+        <Setter Property="BorderBrush"  Value="{DynamicResource ColorVerd}" />
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background"  Value="{DynamicResource ColorVerd}" />
+                <Setter Property="Foreground"  Value="{DynamicResource ColorBlanc}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Borrar - Filled -->
+    <Style x:Key="BtnBorrarFilled" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorTaronja}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBlanc}" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ColorMarron}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Borrar - Outlined -->
+    <Style x:Key="BtnBorrarOutlined" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorBlanc}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorTaronja}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorTaronja}" />
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background"  Value="{DynamicResource ColorTaronja}" />
+                <Setter Property="Foreground"  Value="{DynamicResource ColorBlanc}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Editar - Filled -->
+    <Style x:Key="BtnEditarFilled" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorVioleta}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorBlanc}" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#7a0273"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Editar - Outlined -->
+    <Style x:Key="BtnEditarOutlined" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorBlanc}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorVioleta}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorVioleta}" />
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background"  Value="{DynamicResource ColorVioleta}" />
+                <Setter Property="Foreground"  Value="{DynamicResource ColorBlanc}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Sistema - Filled -->
+    <Style x:Key="BtnSistemaFilled" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorGroc}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorNegre}" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ColorGrocFosc}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Sistema - Outlined -->
+    <Style x:Key="BtnSistemaOutlined" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ColorBlanc}" />
+        <Setter Property="Foreground" Value="{DynamicResource ColorGrocFosc}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorGroc}" />
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontLabel}"/>
+        <Setter Property="Padding" Value="16,8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background"  Value="{DynamicResource ColorGrocFosc}" />
+                <Setter Property="Foreground"  Value="{DynamicResource ColorBlanc}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botó Navegació TopBar -->
+    <Style x:Key="NavButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorVerdFosc}" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontTitol}"/>
+        <Setter Property="Padding" Value="16,0"/>
+        <Setter Property="Height" Value="44"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ColorGroc}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,135 @@
+﻿<Window x:Class="MilAventures.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MilAventures" Height="700" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource ColorBlanc}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- TOPBAR -->
+        <Border Grid.Row="0" Background="{StaticResource ColorVerd}">
+            <Grid Margin="15,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo + Títol -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Source="/Assets/Images/logo-my-default.png"
+                           Height="48" Width="48" Margin="0,0,12,0"/>
+                    <TextBlock Text="MilAventures"
+                               Style="{StaticResource EstilTitol}"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Navegació -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+
+                    <Button Command="{Binding NavInicCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource NavButtonStyle}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding CurrentPage}" Value="Inici">
+                                        <Setter Property="Foreground" Value="{StaticResource ColorGrocFosc}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock Text="Inici" FontFamily="{StaticResource FontTitol}" FontSize="16"/>
+                    </Button>
+
+                    <Button Command="{Binding NavBookingsCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource NavButtonStyle}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding CurrentPage}" Value="Reserves">
+                                        <Setter Property="Foreground" Value="{StaticResource ColorGrocFosc}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock Text="Reserves" FontFamily="{StaticResource FontTitol}" FontSize="16"/>
+                    </Button>
+
+                    <Button Command="{Binding NavEquipmentCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource NavButtonStyle}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding CurrentPage}" Value="Material">
+                                        <Setter Property="Foreground" Value="{StaticResource ColorGrocFosc}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock Text="Material" FontFamily="{StaticResource FontTitol}" FontSize="16"/>
+                    </Button>
+
+                    <Button Command="{Binding NavActivitiesCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource NavButtonStyle}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding CurrentPage}" Value="Activitats">
+                                        <Setter Property="Foreground" Value="{StaticResource ColorGrocFosc}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock Text="Activitats" FontFamily="{StaticResource FontTitol}" FontSize="16"/>
+                    </Button>
+
+                    <Button Command="{Binding NavGuidesCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource NavButtonStyle}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding CurrentPage}" Value="Guies">
+                                        <Setter Property="Foreground" Value="{StaticResource ColorGrocFosc}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock Text="Guies" FontFamily="{StaticResource FontTitol}" FontSize="16"/>
+                    </Button>
+
+                    <Button Command="{Binding NavClientsCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource NavButtonStyle}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding CurrentPage}" Value="Clients">
+                                        <Setter Property="Foreground" Value="{StaticResource ColorGrocFosc}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock Text="Clients" FontFamily="{StaticResource FontTitol}" FontSize="16"/>
+                    </Button>
+
+                    <Button Command="{Binding NavInformesCommand}">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource NavButtonStyle}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding CurrentPage}" Value="Informes">
+                                        <Setter Property="Foreground" Value="{StaticResource ColorGrocFosc}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <TextBlock Text="Informes" FontFamily="{StaticResource FontTitol}" FontSize="16"/>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- CONTINGUT DINÀMIC -->
+        <ContentControl Grid.Row="1" Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>

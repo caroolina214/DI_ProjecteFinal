@@ -1,0 +1,269 @@
+﻿<Application x:Class="MilAventures.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:vmCat="clr-namespace:MilAventures.ViewModel.Categories;assembly=MilAventures.ViewModel"
+             xmlns:vmGui="clr-namespace:MilAventures.ViewModel.Guides;assembly=MilAventures.ViewModel"
+             xmlns:vmCli="clr-namespace:MilAventures.ViewModel.Clients;assembly=MilAventures.ViewModel"
+             xmlns:vmEq="clr-namespace:MilAventures.ViewModel.Equipments;assembly=MilAventures.ViewModel"
+             xmlns:vmAct="clr-namespace:MilAventures.ViewModel.Activities;assembly=MilAventures.ViewModel"
+             xmlns:vmBook="clr-namespace:MilAventures.ViewModel.Bookings;assembly=MilAventures.ViewModel"
+             xmlns:viewsCat="clr-namespace:MilAventures.View.Views.Categories"
+             xmlns:viewsGui="clr-namespace:MilAventures.View.Views.Guides"
+             xmlns:viewsCli="clr-namespace:MilAventures.View.Views.Clients"
+             xmlns:viewsEq="clr-namespace:MilAventures.View.Views.Equipments"
+             xmlns:viewsAct="clr-namespace:MilAventures.View.Views.Activities"
+             xmlns:viewsBook="clr-namespace:MilAventures.View.Views.Bookings"
+             xmlns:vmInf="clr-namespace:MilAventures.ViewModel.Reports;assembly=MilAventures.ViewModel"
+             xmlns:viewsInf="clr-namespace:MilAventures.View.Views.Reports"
+             xmlns:converters="clr-namespace:MilAventures.View.Converters"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets/Styles/DataGridStyles.xaml"/>
+                <ResourceDictionary Source="Assets/Styles/ButtonStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:PhotoPathConverter x:Key="PhotoPathConverter" />
+            <converters:BoolToIconConverter x:Key="BoolToIconConverter" />
+            <converters:LowStockForegroundConverter x:Key="LowStockForegroundConverter"/>
+            <converters:DifficultyConverter x:Key="DifficultyConverter"/>
+            <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+            <!-- DataTemplates -->
+            <DataTemplate DataType="{x:Type vmCat:CategoryListViewModel}">
+                <viewsCat:CategoryListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmGui:GuideListViewModel}">
+                <viewsGui:GuideListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmCli:ClientListViewModel}">
+                <viewsCli:ClientListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmEq:EquipmentListViewModel}">
+                <viewsEq:EquipmentListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmAct:ActivityListViewModel}">
+                <viewsAct:ActivityListView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmBook:BookingListViewModel}">
+                <viewsBook:BookingListView/>
+            </DataTemplate> 
+            <DataTemplate DataType="{x:Type vmInf:InformesViewModel}">
+                <viewsInf:InformesView/>
+            </DataTemplate>
+
+            <!-- FONTS -->
+            <FontFamily x:Key="FontTitol">
+                /Assets/Fonts/#Momo Trust Display
+            </FontFamily>
+            <FontFamily x:Key="FontSubtitol">
+                /Assets/Fonts/#Shippori Antique B1
+            </FontFamily>
+            <FontFamily x:Key="FontLabel">
+                /Assets/Fonts/#Carrois Gothic SC
+            </FontFamily>
+            <FontFamily x:Key="FontText">
+                /Assets/Fonts/#Work Sans
+            </FontFamily>
+
+            <!-- COLORS -->
+            <SolidColorBrush x:Key="ColorVioleta"    Color="#A6039B"/>
+            <SolidColorBrush x:Key="ColorVerd"      Color="#667302"/>
+            <SolidColorBrush x:Key="ColorGroc"      Color="#F2CB05"/>
+            <SolidColorBrush x:Key="ColorGrocFosc"  Color="#F29F05"/>
+            <SolidColorBrush x:Key="ColorTaronja"   Color="#F25C05"/>
+            <SolidColorBrush x:Key="ColorMarron"    Color="#612502"/>
+            <SolidColorBrush x:Key="ColorVerdFosc"  Color="#232901"/>
+            <SolidColorBrush x:Key="ColorBlanc"     Color="#FCFCFC"/>
+            <SolidColorBrush x:Key="ColorGris"      Color="#DFDFDF"/>
+            <SolidColorBrush x:Key="ColorNegre"     Color="#1F1F1F"/>
+
+            <!-- ESTILS TEXTOS -->
+            <Style x:Key="EstilTitol" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource FontTitol}"/>
+                <Setter Property="FontSize" Value="48"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorGroc}"/>
+            </Style>
+
+            <Style x:Key="EstilSubtitol" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource FontSubtitol}"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorNegre}"/>
+            </Style>
+
+            <Style x:Key="EstilMiniTitol" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource FontSubtitol}"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorNegre}"/>
+            </Style>
+
+            <Style x:Key="EstilLabel" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource FontLabel}"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorNegre}"/>
+            </Style>
+
+            <Style x:Key="EstilText" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource FontText}"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorNegre}"/>
+            </Style>
+            
+            <!-- ESTILS DE CONTROLS -->
+            <Style x:Key="InputStyle" TargetType="TextBox">
+                <Setter Property="FontFamily" Value="{StaticResource FontText}"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorNegre}"/>
+                <Setter Property="Background" Value="{StaticResource ColorBlanc}"/>
+                <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ColorGroc}"/>
+                <Setter Property="Padding" Value="12,10"/>
+                <Setter Property="CaretBrush" Value="{StaticResource ColorNegre}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                  Padding="{TemplateBinding Padding}"
+                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="True">
+                        <Setter Property="BorderBrush" Value="{StaticResource ColorGrocFosc}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="DropdownStyle" TargetType="ComboBox">
+                <Setter Property="FontFamily" Value="{StaticResource FontText}"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorNegre}"/>
+                <Setter Property="Background" Value="{StaticResource ColorBlanc}"/>
+                <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ColorGroc}"/>
+                <Setter Property="Padding" Value="12,10"/>
+                <Setter Property="ItemTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding code}" FontFamily="{StaticResource FontText}" FontSize="16"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ComboBox">
+                            <Grid>
+                                <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="32"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ContentPresenter Grid.Column="0"
+                                              Content="{TemplateBinding SelectionBoxItem}"
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              Margin="{TemplateBinding Padding}"
+                                              VerticalAlignment="Center"/>
+                                        <iconPacks:PackIconMaterial Grid.Column="1"
+                                       Kind="ChevronDown"
+                                       Width="16" Height="16"
+                                       Foreground="{StaticResource ColorGroc}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                                        <ToggleButton Grid.ColumnSpan="2"
+                                          Opacity="0"
+                                          IsChecked="{Binding IsDropDownOpen,
+                                              RelativeSource={RelativeSource AncestorType=ComboBox}}"/>
+                                    </Grid>
+                                </Border>
+                                <Popup IsOpen="{TemplateBinding IsDropDownOpen}"
+                           Placement="Bottom"
+                           AllowsTransparency="True"
+                           Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ComboBox}}">
+                                    <Border Background="{StaticResource ColorBlanc}"
+                                BorderBrush="{StaticResource ColorGris}"
+                                BorderThickness="1,0,1,1"
+                                MaxHeight="200">
+                                        <ScrollViewer>
+                                            <ItemsPresenter/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="{StaticResource ColorGrocFosc}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="SearchBarStyle" TargetType="TextBox">
+                <Setter Property="FontFamily" Value="{StaticResource FontText}"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Foreground" Value="{StaticResource ColorNegre}"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderBrush" Value="{StaticResource ColorVerd}"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Padding" Value="40,8,8,8"/>
+                <Setter Property="CaretBrush" Value="{StaticResource ColorNegre}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="24">
+                                <Grid>
+                                    <iconPacks:PackIconMaterial Kind="Magnify"
+                                        Width="20" Height="20"
+                                        Foreground="{StaticResource ColorNegre}"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        Margin="14,0,0,0"/> 
+                                    <ScrollViewer x:Name="PART_ContentHost"
+                                      Padding="{TemplateBinding Padding}"
+                                      VerticalAlignment="Center"/>
+                                    <TextBlock Text="Buscar ..."
+                                   FontFamily="{StaticResource FontText}"
+                                   FontSize="16"
+                                   Foreground="{StaticResource ColorNegre}"
+                                   Padding="44,10,16,10"
+                                   VerticalAlignment="Center"
+                                   IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox}}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="{StaticResource ColorGroc}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
