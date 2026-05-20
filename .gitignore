@@ -1,0 +1,48 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docobj
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bin/
+obj/
+out/
+
+# NuGet
+*.nupkg
+packages/
+!**/packages/repositories.config
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.temp
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Crystal Reports
+*.rpt.bak
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docobj
+
+# Installer output
+installer/
+
+# Photos uploaded by users
+**/Assets/Photos/
