@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo-my-default.png" alt="MilAventures Logo" width="120"/>
+  <img src="docs/img/logo-my-default.png" alt="MilAventures Logo" width="120"/>
 
 # MilAventures
 
